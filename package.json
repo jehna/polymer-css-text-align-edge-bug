@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "polymer-cli": "0.18.0-pre.15"
+  },
+  "scripts": {
+    "start": "python -m SimpleHTTPServer 8081"
+  }
+}

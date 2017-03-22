@@ -1,0 +1,37 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymer-cli-test-app">
+  <template>
+    <style>
+      :root {
+        width: 400px;
+        background: #CFC;
+      }
+
+      #works {
+        text-align: center;
+
+        --OtherCSSVariablesDoWork: blue;
+        border: 1px solid var(--OtherCSSVariablesDoWork);
+      }
+
+      #doesnotwork {
+        --MyTextAlign: center;
+        text-align: var(--MyTextAlign);
+
+        --OtherCSSVariablesDoWork: blue;
+        border: 1px solid var(--OtherCSSVariablesDoWork);
+      }
+    </style>
+    <div id="works">This div's text align is center</div>
+    <div id="doesnotwork">This div's text align should also be center, but is not so in Edge browser</div>
+  </template>
+
+  <script>
+    class MyApplication extends Polymer.Element {
+      static get is() { return 'polymer-cli-test-app'; }
+    }
+
+    window.customElements.define(MyApplication.is, MyApplication);
+  </script>
+</dom-module>
